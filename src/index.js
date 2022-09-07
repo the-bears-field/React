@@ -5,6 +5,11 @@ const onClickAdd = () => {
   const inputedText = document.getElementById('add-text').value;
   document.getElementById('add-text').value = '';
 
+  createImcompleteList(inputedText);
+};
+
+// 未完了リストに追加する関数
+const createImcompleteList = (text) => {
   // liタグ作成
   const liTag = document.createElement('li');
   liTag.className = 'list__row';
@@ -12,7 +17,7 @@ const onClickAdd = () => {
   // pタグ作成
   const pTag = document.createElement('p');
   pTag.className = 'list__title';
-  pTag.innerText = inputedText;
+  pTag.innerText = text;
 
   // 完了ボタン作成
   const completeButton = document.createElement('button');
@@ -41,6 +46,16 @@ const onClickAdd = () => {
     const backButton = document.createElement('button');
     backButton.className = 'button';
     backButton.innerText = '戻す';
+
+    backButton.addEventListener('click', () => {
+      const moveTarget = backButton.parentNode;
+      document.getElementById('complete-list').removeChild(moveTarget);
+
+      // テキスト取得
+      const moveTargetText = backButton.parentNode.firstElementChild.innerText;
+
+      createImcompleteList(moveTargetText);
+    });
 
     addTarget.appendChild(pTag);
     addTarget.appendChild(backButton);
