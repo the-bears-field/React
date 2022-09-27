@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { CompleteTodos } from "./components/CompleteTodos";
+import { IncompleteTodos } from "./components/IncompleteTodos";
+import { InputTodo } from './components/InputTodo';
 import './index.css';
 
 export const App = () => {
@@ -47,37 +50,20 @@ export const App = () => {
 
   return (
   <>
-    <div className="input-area">
-      <input className="input-area__input" id="add-text" onChange={onChangeTodoText} placeholder="TODOを入力" value={todoText} />
-      <button className="button" id="add-button" onClick={onClickAdd}>追加</button>
-    </div>
-    <div className="imcomplete-area">
-      <p className="title">未完了のTODO</p>
-      <ul className="list">
-        { incompleteTodos.map((todo, index) => {
-            return (
-              <li className="list__row" key={todo} >
-                <p className="list__title">{todo}</p>
-                <button className="button" onClick={() => onClickComplete(index)}>完了</button>
-                <button className="button" onClick={() => onClickDelete(index)}>削除</button>
-              </li>
-            );
-        }) }
-      </ul>
-    </div>
-    <div className="complete-area">
-      <p className="title">完了のTODO</p>
-      <ul className="list">
-        { completeTodos.map((todo, index) => {
-          return (
-            <li className="list__row" key={todo} >
-              <p className="list__title">{todo}</p>
-              <button className="button" onClick={() => onClickBack(index)}>戻す</button>
-            </li>
-          );
-        }) }
-      </ul>
-    </div>
+    <InputTodo
+      todoText={todoText}
+      onChange={onChangeTodoText}
+      onClick={onClickAdd}
+    />
+    <IncompleteTodos
+      todos={incompleteTodos}
+      onClickComplete={onClickComplete}
+      onClickDelete={onClickDelete}
+    />
+    <CompleteTodos
+      todos={completeTodos}
+      onClickBack={onClickBack}
+    />
   </>
   );
 };
