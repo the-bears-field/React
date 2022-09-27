@@ -55,7 +55,7 @@ code {
   padding: 6px 16px;
 }
 
-.imcomplete-area {
+.incomplete-area {
   background-color: #c6ffe2;
 }
 
@@ -63,13 +63,13 @@ code {
   background-color: #ffffe0;
 }
 
-.imcomplete-area,
+.incomplete-area,
 .complete-area {
   min-height: 200px;
 }
 
 .input-area,
-.imcomplete-area,
+.incomplete-area,
 .complete-area {
   border-radius: 8px;
   margin: 8px;
