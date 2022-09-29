@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-export const ChildArea = (props) => {
+export const ChildArea = memo((props) => {
   const { isOpen } = props;
 
   const style = {
@@ -14,4 +14,4 @@ export const ChildArea = (props) => {
       { isOpen &&<p style={style}>子コンポーネント</p> }
     </>
   );
-}
+});
