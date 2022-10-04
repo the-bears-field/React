@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 
 export const ChildArea = memo((props) => {
-  const { isOpen } = props;
+  const { isOpen, onClickClose } = props;
 
   const style = {
     backgroundColor: 'gold',
@@ -11,7 +11,13 @@ export const ChildArea = memo((props) => {
 
   return (
     <>
-      { isOpen &&<p style={style}>子コンポーネント</p> }
+      { isOpen && (
+        <>
+          <p style={style}>子コンポーネント</p>
+          <button onClick={onClickClose}>閉じる</button>
+        </>
+        )
+      }
     </>
   );
 });
