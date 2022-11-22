@@ -3,6 +3,7 @@ import { PrimaryButton } from './components/atoms/button/PrimaryButton';
 import { SecondaryButton } from './components/atoms/button/SecondaryButton';
 import { SearchInput } from './components/molecules/SearchInput';
 import { UserCard } from './components/organisms/user/UserCard';
+import { DefaultLayout } from './components/templates/DefaultLayout';
 
 const user = {
   name: 'John Smith',
@@ -17,11 +18,11 @@ const user = {
 
 export const App = () => {
   return (
-    <>
+    <DefaultLayout>
       <PrimaryButton>test</PrimaryButton>
       <SecondaryButton>検索</SecondaryButton>
       <SearchInput />
       <UserCard user={user}/>
-    </>
+    </DefaultLayout>
   );
 }
