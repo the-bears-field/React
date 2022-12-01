@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { BaseButton } from './BaseButton';
 
 export const SecondaryButton = (props) => {
-  const { children } = props;
+  const { children, onClick } = props;
 
     return (
-    <StyledSecondaryButton>{ children }</StyledSecondaryButton>
+    <StyledSecondaryButton onClick={onClick}>{ children }</StyledSecondaryButton>
   );
 }
 
