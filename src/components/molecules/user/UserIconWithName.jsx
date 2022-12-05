@@ -2,9 +2,13 @@ import styled from "styled-components";
 import { ProfileImage } from "../../atoms/img/ProfileImage";
 import { ProfileCaption } from "../../atoms/text/ProfileCaption";
 import { SecondaryButton } from '../../atoms/button/SecondaryButton';
+import { useContext } from "react";
+import { UserContext } from '../../../providers/UserProvider';
 
 export const UserIconWithName = (props) => {
-  const { image, name, isAdmin } = props;
+  const { image, name } = props;
+  const { userInfo } = useContext(UserContext);
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
 
   return (
     <StyledContainer>
