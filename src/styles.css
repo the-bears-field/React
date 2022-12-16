@@ -1,6 +1,6 @@
 body {
-  margin: 0;
-  min-height: 100vh;
+  margin: 0 auto;
+  width: 100vw;
 }
 
 .App {
@@ -37,6 +37,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
