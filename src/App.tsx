@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './styles.css';
+import axios from 'axios';
+import { useState } from 'react';
+import { Todo } from './Todo'
 
-function App() {
+type TodoType = {
+  userId: number,
+  id: number,
+  title: string,
+  completed: boolean
+}
+
+export const App = () => {
+  const [ todos, setTodos ] = useState<TodoType[]>([])
+  const onClickFetchData = () => {
+    axios
+      .get<TodoType[]>('https://jsonplaceholder.typicode.com/todos')
+      .then((response) => {
+        setTodos(response.data)
+      }).catch((error) => {
+        console.log(error)
+      })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={onClickFetchData}>データ取得</button>
+      { todos.map((todo) => (
+        <Todo title={todo.title} userId={todo.userId}></Todo>
+      )) }
     </div>
   );
 }
-
-export default App;
