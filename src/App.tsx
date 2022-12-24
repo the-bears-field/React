@@ -2,13 +2,7 @@ import './styles.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { Todo } from './Todo'
-
-type TodoType = {
-  userId: number,
-  id: number,
-  title: string,
-  completed: boolean
-}
+import { TodoType } from './types/Todo'
 
 export const App = () => {
   const [ todos, setTodos ] = useState<TodoType[]>([])
