@@ -1,36 +1,13 @@
 import './styles.css';
 import { UserCard } from './components/UserCard';
-import { useState, VFC } from 'react';
-import axios from 'axios';
-import { UserProfile } from './types/userProfile';
-import { User } from './types/api/user';
+import { VFC } from 'react';
 import styled from 'styled-components';
+import { useAllUsers } from './hooks/useAllUsers';
 
 export const App: VFC = () => {
-  const [ userProfiles, setUserProfiles ] = useState<Array<UserProfile>>([])
-  const [ isLoading, setIsLoading ] = useState<boolean>(false)
-  const [ isError, setIsError ] = useState<boolean>(false)
+  const { getUsers, userProfiles, isLoading, isError } = useAllUsers()
 
-  const onClickFetchUser = () => {
-    setIsLoading(true)
-    setIsError(false)
-
-    axios
-      .get<Array<User>>('https://jsonplaceholder.typicode.com/users')
-      .then((res) => {
-        const data = res.data.map<UserProfile>((user) => ({
-          id: user.id,
-          name: `${user.name}(${user.username})`,
-          email: user.email,
-          address: `${user.address.street} ${user.address.suite} ${user.address.city}`
-        }))
-        setUserProfiles(data)
-      }).catch(() => {
-        setIsError(true)
-      }).finally(() => {
-        setIsLoading(false)
-      })
-  }
+  const onClickFetchUser = () => getUsers()
 
   return (
     <StyledApp>
