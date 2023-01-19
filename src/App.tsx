@@ -1,36 +1,23 @@
+import logo from './logo.svg';
 import './styles.css';
-import { UserCard } from './components/UserCard';
-import { VFC } from 'react';
-import styled from 'styled-components';
-import { useAllUsers } from './hooks/useAllUsers';
 
-export const App: VFC = () => {
-  const { getUsers, userProfiles, isLoading, isError } = useAllUsers()
-
-  const onClickFetchUser = () => getUsers()
-
+export const App = () => {
   return (
-    <StyledApp>
-      <button onClick={onClickFetchUser}>データ取得</button>
-      { isError && <StyledErrorMessage>データ取得に失敗しました</StyledErrorMessage> }
-      { isLoading && <StyledParagraph>Loading...</StyledParagraph> }
-      { (!isError && !isLoading) &&
-        userProfiles.map((user) => <UserCard key={user.id} user={user} />)
-      }
-    </StyledApp>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
-
-const StyledApp = styled.div`
-  width:100vw;
-  margin: 0 auto;
-`
-
-const StyledParagraph = styled.p`
-  color: black;
-  font-size: 16px;
-`
-
-const StyledErrorMessage = styled(StyledParagraph)`
-  color: red;
-`
