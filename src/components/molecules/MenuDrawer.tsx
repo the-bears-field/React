@@ -5,14 +5,14 @@ import {
   DrawerContent,
   DrawerOverlay
 } from "@chakra-ui/react"
-import { VFC } from 'react';
+import { MouseEventHandler, VFC } from 'react';
 
 type Props = {
   onClose: () => void;
   isOpen: boolean;
-  onClickHome: () => void;
-  onClickUserManagement: () => void;
-  onClickSetting: () => void;
+  onClickHome: MouseEventHandler;
+  onClickUserManagement: MouseEventHandler;
+  onClickSetting: MouseEventHandler;
 }
 
 export const MenuDrawer: VFC<Props> = (props) => {

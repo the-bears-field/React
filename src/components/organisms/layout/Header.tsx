@@ -6,7 +6,7 @@ import {
   useDisclosure
 } from "@chakra-ui/react"
 import { History } from "history"
-import { memo, useCallback, VFC } from "react"
+import { memo, MouseEventHandler, useCallback, VFC } from "react"
 import { useHistory } from "react-router"
 
 import { MenuIconButton } from "../../atoms/button/MenuIconButoon"
@@ -16,9 +16,9 @@ export const Header: VFC = memo(() => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const history: History = useHistory()
 
-  const onClickHome = useCallback(() => history.push('/home'), [history])
-  const onClickUserManagement = useCallback(() => history.push('/home/user-management'), [history])
-  const onClickSetting = useCallback(() => history.push('/home/setting'), [history])
+  const onClickHome: MouseEventHandler = useCallback(() => history.push('/home'), [history])
+  const onClickUserManagement: MouseEventHandler = useCallback(() => history.push('/home/user-management'), [history])
+  const onClickSetting: MouseEventHandler = useCallback(() => history.push('/home/setting'), [history])
 
   return (
     <>
