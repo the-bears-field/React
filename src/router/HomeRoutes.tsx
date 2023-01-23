@@ -2,8 +2,15 @@ import { Home } from '../components/pages/Home';
 import { Page404 } from '../components/pages/Page404';
 import { Setting } from '../components/pages/Setting';
 import { UserManagement } from '../components/pages/UserManagement';
+import { ReactElement } from 'react';
 
-export const homeRoutes = [
+type homeRoutesType = {
+  path: string,
+  exact: boolean,
+  children: ReactElement
+}
+
+export const homeRoutes: Array<homeRoutesType> = [
   {
     path: "/",
     exact: true,
