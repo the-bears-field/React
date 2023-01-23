@@ -25,7 +25,7 @@ export const Header: VFC = memo(() => {
           align="center"
           as="a"
           mr={8}
-          _hover={{ cousor: 'pointer' }}
+          _hover={{ cursor: 'pointer' }}
         >
           <Heading
             as="h1"
