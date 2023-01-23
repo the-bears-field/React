@@ -8,11 +8,11 @@ import {
 import { VFC } from 'react';
 
 type Props = {
-  onClose: () => void,
-  isOpen: boolean,
-  onClickHome: () => void,
-  onClickUserManagement: () => void,
-  onClickSetting: () => void
+  onClose: () => void;
+  isOpen: boolean;
+  onClickHome: () => void;
+  onClickUserManagement: () => void;
+  onClickSetting: () => void;
 }
 
 export const MenuDrawer: VFC<Props> = (props) => {

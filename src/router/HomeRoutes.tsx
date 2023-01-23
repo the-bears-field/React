@@ -5,9 +5,9 @@ import { UserManagement } from '../components/pages/UserManagement';
 import { ReactElement } from 'react';
 
 type homeRoutesType = {
-  path: string,
-  exact: boolean,
-  children: ReactElement
+  path: string;
+  exact: boolean;
+  children: ReactElement;
 }
 
 export const homeRoutes: Array<homeRoutesType> = [
