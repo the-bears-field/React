@@ -1,4 +1,3 @@
-import { useDisclosure } from '@chakra-ui/hooks';
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react';
 import { memo, VFC } from 'react';
