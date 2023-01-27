@@ -8,7 +8,7 @@ export const UserManagement: VFC = memo(() => {
   const imageUrl: string = 'https://source.unsplash.com/random'
   const { getUsers, loading, users } = useAllUsers()
 
-  useEffect(() => getUsers(), [])
+  useEffect(() => getUsers(), [getUsers])
 
   return (
     <>

@@ -20,7 +20,7 @@ export const useAllUsers: Function = () => {
       showMessage({title: 'ユーザ所得に失敗しました。', status: 'error'})
     })
     .finally(() => setLoading(false))
-  }, [])
+  }, [showMessage])
 
   return { getUsers, loading, users }
 }
