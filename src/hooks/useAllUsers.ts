@@ -17,7 +17,7 @@ export const useAllUsers: Function = () => {
       setUsers(res.data)
     })
     .catch(() => {
-      showMessage({title: 'ユーザ所得に失敗しました。', status: 'error'})
+      showMessage({title: 'ユーザ取得に失敗しました。', status: 'error'})
     })
     .finally(() => setLoading(false))
   }, [showMessage])
