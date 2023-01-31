@@ -11,10 +11,10 @@ export type User = {
     geo: {
       lat: string;
       lng: string;
-      phone: string;
-      website: string;
     };
   };
+  phone: string;
+  website: string;
   company: {
     name: string;
     catchPhrase: string;
