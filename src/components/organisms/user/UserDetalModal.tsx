@@ -1,7 +1,7 @@
 import { memo, VFC } from 'react';
 import { FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack } from '@chakra-ui/react';
 
-import { User } from '../../types/api/user';
+import { User } from '../../../types/api/user';
 
 type Props = {
   isOpen: boolean;

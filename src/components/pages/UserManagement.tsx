@@ -3,7 +3,7 @@ import { Center, Spinner, useDisclosure, Wrap, WrapItem } from '@chakra-ui/react
 
 import { UserCard } from "../organisms/user/UserCard";
 import { useAllUsers } from '../../hooks/useAllUsers';
-import { User } from "../types/api/user";
+import { User } from "../../types/api/user";
 import { UserDetalModal } from '../organisms/user/UserDetalModal';
 import { useSelectUser } from '../../hooks/useSelectUser';
 
